@@ -1,5 +1,9 @@
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 export default function ListUsers() {
+  const navigate = useNavigate();
   const [inputs, setInputs] = useState({});
   const handleChage = (event) => {
     const name = event.target.name;
@@ -8,8 +12,14 @@ export default function ListUsers() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(inputs);
-    console.log(inputs);
+    // alert(inputs);
+    // console.log(inputs);
+    axios
+      .post("http://localhost/api/user/save", inputs)
+      .then(function (response) {
+        console.log(response.data);
+        navigate("/");
+      });
   };
   return (
     <div>
