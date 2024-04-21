@@ -11,7 +11,12 @@ function App() {
       <BrowserRouter>
       <nav>
       <ul>
-        <li>
+        <li  className="btn btn-primary"
+data-bs-toggle="collapse"
+href="#collapseExample"
+role="button"
+aria-expanded="false"
+aria-controls="collapseExample">
           <Link to="/">List Users</Link>
         </li>
         <li>

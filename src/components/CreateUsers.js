@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function ListUsers() {
   const navigate = useNavigate();
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState([]);
   const handleChage = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -23,7 +23,7 @@ export default function ListUsers() {
   };
   return (
     <div>
-      <h1>List Users</h1>
+      <h1>Create User</h1>
       <form onSubmit={handleSubmit}>
         <table cellSpacing={10}>
           <tbody>
